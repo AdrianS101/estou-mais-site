@@ -1,0 +1,92 @@
+.clientes {
+  padding: 80px 0;
+  background: #f8f7ff;
+
+  .clientes-tag {
+    text-align: center;
+    color: #000000;
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    font-weight: 700;
+    text-transform: none; /* deixa elegante e uniforme */
+    letter-spacing: 0.5px;       /* espaçamento entre letras */
+    line-height: 1.2;          /* melhor leitura */
+    position: relative;
+
+  }
+
+  /* efeito de brilho sutil */
+.clientes-tag::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #7b3fe4;
+    border-radius: 2px;
+}
+
+  .logos-wrapper {
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      white 15%,
+      white 85%,
+      transparent
+    );
+  }
+
+  .logos-track {
+    align-items: center;
+    display: flex;
+    gap: 80px;
+    width: max-content;
+    animation: scrollLogos 30s linear infinite;
+  }
+
+  img {
+     height: 70px;       /* tamanho padrão */
+     width: 140px;       /* largura fixa */
+     object-fit: contain; /* mantém proporção */
+     opacity: 0.8;
+     filter: brightness(0);
+     transition: 0.3s;
+     vertical-align: middle;
+  }
+
+  .logo-color {
+  filter: none !important;
+}
+
+.logo-mercado {
+  height: 95px !important;
+  width: auto !important;
+}
+
+.vuelo {
+  height: 50px !important;
+  width: auto !important;
+}
+
+.bradesco {
+  height: 95px !important;
+  width: auto !important;
+}
+  img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
